@@ -1,0 +1,227 @@
+.cartModal {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	padding-bottom: 20px;
+	@include breakpoint("mobile") {
+		justify-content: flex-start;
+		margin-right: 20px;
+	}
+
+	@include breakpoint("small") {
+		justify-content: space-between;
+		margin-right: 20px;
+	}
+
+	@include breakpoint("medium") {
+		margin-right: unset;
+	}
+
+	&_items {
+		display: flex;
+		flex-direction: column;
+		overflow-x: scroll;
+		// margin-bottom: 60px;
+		@include breakpoint("mobile") {
+			margin-bottom: 50px;
+			max-height: 300px;
+		}
+		@include breakpoint("small") {
+			max-height: 345px;
+		}
+		@include breakpoint("medium") {
+			max-height: 380px;
+		}
+		@include breakpoint("large") {
+			max-height: 450px;
+		}
+	}
+
+	&_item {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		margin-right: 40px;
+		justify-content: flex-end;
+		&:after {
+			content: "";
+
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: linear-gradient(270deg, #3c3c3c 7.52%, rgba(60, 60, 60, 0) 50%);
+		}
+
+		&-image {
+			// width: 50%;
+			@include breakpoint("large") {
+				width: 340px;
+				height: 333px;
+			}
+
+			img {
+				position: relative !important;
+			}
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			position: relative;
+
+			@include breakpoint("mobile") {
+				padding: 22px 26px 16px 0;
+				gap: 10px;
+				height: 170px;
+			}
+			@include breakpoint("small") {
+				padding: 90px 26px 26px 0;
+			}
+
+			.productCart {
+				&_category {
+					text-transform: uppercase;
+					font-family: $inter;
+
+					@include breakpoint("mobile") {
+						font-size: 20px;
+					}
+					@include breakpoint("small") {
+						font-size: 32px;
+					}
+				}
+
+				&_price {
+					font-size: 20px;
+					font-family: $inter;
+				}
+
+				&_quantity {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					gap: 12px;
+
+					.icon {
+						position: relative;
+						font-weight: 200;
+						font-family: $inter;
+						color: $iconColor;
+						margin-top: 0px;
+						cursor: pointer;
+					}
+
+					&-text {
+						font-family: $inter;
+						display: flex;
+						gap: 5px;
+
+						@include breakpoint("mobile") {
+							font-size: 16px;
+						}
+						@include breakpoint("mobile") {
+							font-size: 20px;
+						}
+					}
+				}
+			}
+
+			.removeIcon {
+				height: inherit;
+				color: $iconColor;
+				// margin-top: 10px;
+				position: absolute;
+				right: -45px;
+				transform: translateX(-50%);
+				cursor: pointer;
+
+				@include breakpoint("mobile") {
+					top: 42%;
+					padding: 0;
+				}
+
+				@include breakpoint("small") {
+					top: 50%;
+					padding: 22px 0 26px 0;
+				}
+			}
+		}
+	}
+
+	&_taxes {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		font-family: $inter;
+		gap: 117px;
+
+		@include breakpoint("mobile") {
+			margin-bottom: 19px;
+		}
+
+		@include breakpoint("small") {
+			margin-bottom: 36px;
+		}
+
+		span {
+			text-transform: uppercase;
+			font-size: 24px;
+
+			&:first-child {
+				font-weight: 500;
+			}
+		}
+	}
+
+	&_total {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		font-family: $inter;
+		gap: 71px;
+
+		span {
+			text-transform: uppercase;
+			&:first-child {
+				font-weight: bold;
+				color: $totalColor;
+
+				@include breakpoint("mobile") {
+					font-size: 40px;
+				}
+				@include breakpoint("small") {
+					font-size: 48px;
+				}
+			}
+
+			&:last-child {
+				@include breakpoint("mobile") {
+					font-size: 36px;
+				}
+				@include breakpoint("small") {
+					font-size: 40px;
+				}
+			}
+		}
+	}
+	&_center {
+		@include breakpoint("mobile") {
+			position: fixed;
+			bottom: 120px;
+		}
+	}
+	.chechoutBtn {
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		@include breakpoint("mobile") {
+			position: fixed;
+			bottom: 20px;
+		}
+	}
+}

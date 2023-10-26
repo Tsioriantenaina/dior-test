@@ -1,0 +1,36 @@
+// sm @media (min-width: 640px)
+// md @media (min-width: 768px)
+// lg @media (min-width: 1024px)
+// xl @media (min-width: 1280px)
+// 2xl @media (min-width: 1536px)
+
+$breakpoints: (
+	"mobile": (
+		max-width: 425px,
+	),
+	"small": (
+		min-width: 426px,
+	),
+	"medium": (
+		min-width: 769px,
+	),
+	"large": (
+		min-width: 1025px,
+	),
+	"x-large": (
+		min-width: 1281px,
+	),
+	"2x-large": (
+		min-width: 1537px,
+	),
+) !default;
+
+@mixin breakpoint($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, this `#{$breakpoint}` is not exist. " + "Available breakpoints are: #{map-keys($breakpoints)}. ";
+	}
+}

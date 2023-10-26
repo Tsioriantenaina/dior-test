@@ -1,0 +1,194 @@
+.navItem {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	span {
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+
+	&.column {
+		flex-direction: column;
+		gap: 13px;
+
+		img {
+			width: 20px !important;
+			height: 44px !important;
+			@include breakpoint("large") {
+				width: 35px !important;
+				height: 76px !important;
+			}
+		}
+		span {
+			font-size: 24px;
+			@include breakpoint("large") {
+				font-size: 32px;
+			}
+		}
+	}
+}
+
+.navbar {
+	margin-top: 31px;
+
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+
+	@include breakpoint("medium") {
+		margin-top: 56px;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	&_title {
+		font-family: $inter;
+		font-weight: bold;
+	}
+
+	&_top {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.logo {
+			@include breakpoint("mobile") {
+				height: 28px !important;
+			}
+
+			@include breakpoint("small") {
+				height: 28px !important;
+			}
+
+			@include breakpoint("medium") {
+				height: auto !important;
+			}
+		}
+
+		.cart {
+			align-self: flex-start;
+			img {
+				@include breakpoint("mobile") {
+					width: 29px !important;
+					height: 29px !important;
+				}
+
+				@include breakpoint("small") {
+					width: 29px !important;
+					height: 29px !important;
+				}
+
+				@include breakpoint("medium") {
+					width: auto !important;
+					height: auto !important;
+				}
+			}
+		}
+	}
+
+	&_center {
+		width: auto;
+		@include breakpoint("medium") {
+			width: 100%;
+		}
+	}
+
+	&_right {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		position: relative;
+		width: 100%;
+		justify-content: space-around;
+		margin-top: 52px;
+
+		@include breakpoint("small") {
+			margin-top: 65px;
+			justify-content: flex-end;
+			gap: 74px;
+		}
+
+		@include breakpoint("large") {
+			margin-top: 0;
+			position: absolute;
+			gap: 20px;
+			right: 60px;
+			right: 0;
+			bottom: 15px;
+		}
+
+		@include breakpoint("x-large") {
+			right: 116px;
+		}
+	}
+
+	.logo {
+		align-self: flex-start;
+	}
+
+	.navItem {
+		transition: opacity 0.2s;
+		&.column {
+			align-self: flex-end;
+			@include breakpoint("mobile") {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			span {
+				text-align: center;
+			}
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&.cart {
+			display: flex;
+
+			.count {
+				font-size: 20px;
+				margin-bottom: -5px;
+				margin-right: -5px;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.navItem {
+	transition: opacity 0.2s;
+	&.column {
+		align-self: flex-end;
+		@include breakpoint("mobile") {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		span {
+			text-align: center;
+		}
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&.cart {
+		display: flex;
+
+		.count {
+			font-size: 20px;
+			margin-bottom: -5px;
+			margin-right: -5px;
+			font-weight: 700;
+		}
+	}
+}

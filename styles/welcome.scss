@@ -1,0 +1,23 @@
+.welcome {
+	text-transform: uppercase;
+	font-size: 32px;
+	margin-bottom: 146px;
+	z-index: 10 !important;
+	position: relative;
+
+	@include breakpoint("small") {
+		margin-left: 70px;
+	}
+	@include breakpoint("medium") {
+		margin-left: 0;
+	}
+	&_french {
+		color: $text-gray;
+	}
+
+	&_chinese {
+		margin-left: 81px;
+		font-size: 24px;
+		z-index: 10;
+	}
+}

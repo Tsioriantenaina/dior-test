@@ -1,0 +1,46 @@
+.login {
+	@include breakpoint("mobile") {
+		flex-direction: column !important;
+	}
+
+	&_left {
+		z-index: 10 !important;
+		.inputGroup {
+			z-index: 10 !important;
+			width: 240px !important;
+			margin-bottom: 75px;
+		}
+	}
+
+	&_right {
+		z-index: 5;
+		@include breakpoint("mobile") {
+			position: relative !important;
+			right: auto;
+			left: auto;
+		}
+	}
+
+	.tourEifel {
+		height: calc(100vh - 45px);
+		width: auto;
+		@include breakpoint("mobile") {
+			display: none;
+		}
+		@include breakpoint("small") {
+			display: block;
+			height: calc(100vh - 45px);
+			z-index: 5;
+		}
+
+		&.mobileOnly {
+			@include breakpoint("mobile") {
+				display: block;
+				object-fit: cover;
+			}
+			@include breakpoint("small") {
+				display: none;
+			}
+		}
+	}
+}

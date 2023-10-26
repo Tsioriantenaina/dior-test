@@ -1,0 +1,38 @@
+.modal {
+	&_container {
+		@include breakpoint("mobile") {
+			width: 360px;
+		}
+		@include breakpoint("small") {
+			width: 580px;
+		}
+
+		@include breakpoint("medium") {
+			width: 590px;
+		}
+
+		@include breakpoint("large") {
+			width: 624px;
+		}
+	}
+
+	&_content::before {
+		content: "";
+		position: absolute;
+		left: -68px;
+		top: 0;
+		border-bottom: 100vh solid $white;
+		border-left: 68px solid transparent;
+		border-right: 0px solid transparent;
+
+		@include breakpoint("small") {
+			left: -146px;
+			border-left: 146px solid transparent;
+		}
+
+		@include breakpoint("medium") {
+			left: -180px;
+			border-left: 180px solid transparent;
+		}
+	}
+}

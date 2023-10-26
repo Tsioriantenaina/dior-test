@@ -1,0 +1,255 @@
+.products {
+	margin-top: 34px;
+	height: 250px;
+	align-items: flex-end;
+	@include breakpoint("small") {
+		margin-top: 50px;
+		height: 445px;
+	}
+	@include breakpoint("medium") {
+		margin-top: 75px;
+	}
+	@include breakpoint("large") {
+		margin-top: 253px;
+	}
+}
+
+.product {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	min-width: 493px;
+	height: 275px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin: 0 10px;
+	opacity: 0;
+	transition: opacity 0.2s;
+
+	.imageContainer {
+		width: 96%;
+		position: relative;
+	}
+
+	&_image {
+		width: auto !important;
+		height: 100% !important;
+		min-height: 270px;
+		position: absolute;
+		top: unset !important;
+		right: unset !important;
+		left: -29px !important;
+		bottom: 0 !important;
+	}
+
+	&_right {
+		width: 280px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-left: -290px;
+
+		&-bottom {
+			margin-bottom: 5px;
+			margin-right: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			@include breakpoint("small") {
+				margin-right: 0;
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&_description {
+		color: $secondary-color;
+		font-weight: 300;
+		margin-top: 10px;
+		font-size: 12px;
+		@include breakpoint("small") {
+			margin-top: 20px;
+			font-size: 16px;
+		}
+	}
+
+	&_category {
+		margin: 0 0 5px;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-family: $inter;
+		@include breakpoint("small") {
+			margin: 0 0 19px;
+			font-size: 32px;
+		}
+	}
+
+	&_price {
+		font-family: $inter;
+		font-size: 16px;
+		@include breakpoint("small") {
+			font-size: 20px;
+		}
+	}
+}
+
+.slick-slide.slick-active.slick-current > div {
+	.product {
+		min-width: 816px;
+		height: 445px;
+		margin: 0 20px;
+		opacity: 1;
+
+		.imageContainer {
+			width: 100%;
+			position: relative;
+		}
+
+		&_image {
+			min-height: 641px;
+		}
+
+		&_right {
+			width: 335px;
+			margin-left: -370px;
+
+			&-bottom {
+				margin-bottom: 32px;
+			}
+		}
+
+		&_description {
+			margin-top: 118px;
+		}
+
+		&_category {
+			margin: 0 0 19px;
+			text-transform: uppercase;
+			font-size: 32px;
+			font-family: $inter;
+		}
+
+		&_price {
+			font-family: $inter;
+			font-size: 20px;
+		}
+	}
+}
+
+.slick-slide > div {
+	height: 797px;
+}
+.slick-track {
+	height: 797px;
+	display: flex !important;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.slick-slide.slick-active > div {
+	width: 740px;
+	height: 797px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+
+	.product {
+		margin-bottom: 10px;
+	}
+}
+
+.slick-slide.slick-active.slick-current {
+	width: 816px !important;
+	display: flex;
+	justify-content: center;
+	margin: 0 20px;
+}
+
+.slick-slide.slick-active.slick-current > div {
+	.product {
+		margin: 0 50px 43px;
+	}
+}
+.slick-slide.slick-active:not(.slick-current),
+.slick-slide.slick-active.slick-cloned {
+	min-width: 493px;
+	max-width: 493px;
+	display: flex;
+	justify-content: center;
+	margin: 0 50px;
+	.product {
+		opacity: 0.2;
+		margin-bottom: 43px;
+	}
+
+	& > div {
+		justify-content: flex-start;
+	}
+
+	.product_addTocart {
+		opacity: 0;
+	}
+}
+
+.slick-slide:not(.slick-active) {
+	.product_addTocart {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.slick-arrow.slick-disabled {
+	display: none !important;
+}
+
+.products:has(> .product),
+.regular.slider {
+	display: flex;
+	overflow-y: scroll;
+	height: 390px;
+	align-items: flex-end;
+	padding-bottom: 20px;
+
+	@include breakpoint("small") {
+		height: 510px;
+	}
+
+	.product {
+		min-width: 300px;
+		opacity: 1;
+		margin: 20px 16px 60px;
+		height: 185px;
+		@include breakpoint("small") {
+			height: 275px;
+			min-width: 680px;
+			margin: 20px 16px 100px;
+		}
+
+		.imageContainer {
+			width: 81%;
+
+			img {
+				@include breakpoint("mobile") {
+					min-height: 226px;
+				}
+			}
+		}
+
+		.product_right {
+			margin-left: -67px;
+			width: 137px;
+			@include breakpoint("small") {
+				margin-left: -240px;
+				width: 335px;
+			}
+		}
+
+		&:first-child {
+			margin-left: 10px;
+			@include breakpoint("medium") {
+				margin-left: 0;
+			}
+		}
+	}
+}
