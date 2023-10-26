@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import ToastProvider from "@/providers/ToastProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import { ApolloWrapper } from "../components/ApolloWrapper";
 
 const inter = Inter({
 	style: ["normal"],
@@ -20,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<ToastProvider />
 				<ModalProvider />
-				{children}
+				<ApolloWrapper>{children}</ApolloWrapper>
 			</body>
 		</html>
 	);

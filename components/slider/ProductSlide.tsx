@@ -1,17 +1,38 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React, { useState } from "react";
 import Product from "./Product";
-import { data } from "../../data";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 import { ProductType } from "@/types";
-import useProduct from "@/hooks/useProduct";
+import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import gql from "graphql-tag";
+
+const GET_PRODUCTS = gql`
+	query GetProducts {
+		products {
+			image
+			name
+			id
+			description
+			category
+			quantity
+			price
+		}
+	}
+`;
 
 const ProductSlide = () => {
-	const allProducts = useProduct();
+	const [data, setData] = useState([]);
+
+	useQuery(GET_PRODUCTS, {
+		onCompleted: (data) => {
+			setData(data.products);
+		},
+	});
 
 	const settings: Settings = {
 		className: "center",
@@ -35,7 +56,7 @@ const ProductSlide = () => {
 	return (
 		<div className="products">
 			<Slider {...settings}>
-				{allProducts?.products?.map((product: ProductType) => (
+				{data?.map((product: ProductType) => (
 					<Product
 						key={product.id}
 						product={product}

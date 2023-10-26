@@ -10,10 +10,6 @@ const HomePage = () => {
 			<Container>
 				<Navbar />
 				<ProductSlide />
-				{/* <Button
-					label="Add to cart"
-					onClick={() => {}}
-				/> */}
 			</Container>
 		</ClientOnly>
 	);

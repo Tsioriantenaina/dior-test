@@ -1,13 +1,11 @@
 "use client";
 
-import { data } from "@/data";
-import { getProducts } from "@/hooks/get";
 import useCart from "@/hooks/useCart";
 import useProduct from "@/hooks/useProduct";
 import { ProductType } from "@/types";
 import { formatPrice } from "@/utility/utility";
 import Image from "next/image";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 import { RiDeleteBin6Line, RiH3 } from "react-icons/ri";
 interface CartItemProps {
