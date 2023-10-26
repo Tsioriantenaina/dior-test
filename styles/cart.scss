@@ -2,8 +2,8 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-
 	padding-bottom: 20px;
+
 	@include breakpoint("mobile") {
 		justify-content: flex-start;
 		margin-right: 20px;
@@ -22,17 +22,20 @@
 		display: flex;
 		flex-direction: column;
 		overflow-x: scroll;
-		// margin-bottom: 60px;
+
 		@include breakpoint("mobile") {
 			margin-bottom: 50px;
 			max-height: 300px;
 		}
+
 		@include breakpoint("small") {
 			max-height: 345px;
 		}
+
 		@include breakpoint("medium") {
 			max-height: 380px;
 		}
+
 		@include breakpoint("large") {
 			max-height: 450px;
 		}
@@ -44,9 +47,9 @@
 		position: relative;
 		margin-right: 40px;
 		justify-content: flex-end;
+
 		&:after {
 			content: "";
-
 			width: 100%;
 			height: 1px;
 			position: absolute;
@@ -56,7 +59,6 @@
 		}
 
 		&-image {
-			// width: 50%;
 			@include breakpoint("large") {
 				width: 340px;
 				height: 333px;
@@ -64,6 +66,10 @@
 
 			img {
 				position: relative !important;
+
+				@include breakpoint("large") {
+					width: auto !important;
+				}
 			}
 		}
 
@@ -78,6 +84,7 @@
 				gap: 10px;
 				height: 170px;
 			}
+
 			@include breakpoint("small") {
 				padding: 90px 26px 26px 0;
 			}
@@ -90,6 +97,7 @@
 					@include breakpoint("mobile") {
 						font-size: 20px;
 					}
+
 					@include breakpoint("small") {
 						font-size: 32px;
 					}
@@ -123,6 +131,7 @@
 						@include breakpoint("mobile") {
 							font-size: 16px;
 						}
+
 						@include breakpoint("mobile") {
 							font-size: 20px;
 						}
@@ -133,7 +142,6 @@
 			.removeIcon {
 				height: inherit;
 				color: $iconColor;
-				// margin-top: 10px;
 				position: absolute;
 				right: -45px;
 				transform: translateX(-50%);
@@ -187,6 +195,7 @@
 
 		span {
 			text-transform: uppercase;
+
 			&:first-child {
 				font-weight: bold;
 				color: $totalColor;
@@ -194,6 +203,7 @@
 				@include breakpoint("mobile") {
 					font-size: 40px;
 				}
+
 				@include breakpoint("small") {
 					font-size: 48px;
 				}
@@ -203,6 +213,7 @@
 				@include breakpoint("mobile") {
 					font-size: 36px;
 				}
+
 				@include breakpoint("small") {
 					font-size: 40px;
 				}
@@ -219,6 +230,7 @@
 		display: flex;
 		justify-content: center;
 		align-self: center;
+
 		@include breakpoint("mobile") {
 			position: fixed;
 			bottom: 20px;

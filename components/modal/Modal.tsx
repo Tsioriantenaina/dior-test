@@ -23,6 +23,12 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 			show={open}
 			appear
 			as={Fragment}
+			enter="transition-opacity duration-150"
+			enterFrom="opacity-0"
+			enterTo="opacity-100"
+			leave="transition-opacity duration-150"
+			leaveFrom="opacity-100"
+			leaveTo="opacity-0"
 		>
 			<Dialog
 				as="div"
@@ -32,7 +38,6 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 				<div className="fixed inset-0 bg-black bg-opacity-60" />
 				<div className="fixed inset-0 overflow-y-auto">
 					<div className="flex min-h-full items-start justify-end text-right ">
-						{/* <Transition.Child as={Fragment} >{children}</Transition.Child> */}
 						<Dialog.Panel className="w-full  max-w-3xl text-right align-middle modal_container">
 							<div className="relative flex w-full h-screen items-start justify-end bg-white pt-[60px] sm:pt-[54px] md:pt-[98px] lg:pr-[38px] lg:pt-[135px] modal_content">
 								<div className="absolute left-4 top-[19px] sm:top-[19px] md:top-[46px] lg:top-[51px] w-[35px] h-[35px] ">

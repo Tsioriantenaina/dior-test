@@ -1,9 +1,9 @@
+import toast from "react-hot-toast";
+import { createJSONStorage, persist } from "zustand/middleware";
+import { create } from "zustand";
+
 import { ProductType } from "@/types";
 import { formatPrice } from "@/utility/utility";
-import toast from "react-hot-toast";
-import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
-
 interface CartStore {
 	items: ProductType[];
 	addItem: (data: ProductType) => void;
@@ -73,11 +73,4 @@ const useCart = create(
 	)
 );
 
-// (id: number, quantity: number) => {
-//     const currentItems = get().items;
-// 	const existingIndex = currentItems.findIndex((item) => item.id === id);
-//     currentItems[existingIndex].quantity = quantity;
-//     currentItems[existingIndex].price = formatPrice(existingItem?.price) * quantity;
-//     set({items: currentItems });
-// })),
 export default useCart;

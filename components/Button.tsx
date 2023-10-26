@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { IconType } from "react-icons";
 
 interface ButtonProps {
 	label: string;

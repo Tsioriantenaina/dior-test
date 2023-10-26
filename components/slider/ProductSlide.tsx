@@ -1,38 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
-import Product from "./Product";
+import { useEffect } from "react";
 import Slider, { Settings } from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useRouter } from "next/navigation";
+
+import Product from "./Product";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 import { ProductType } from "@/types";
-import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import gql from "graphql-tag";
+import useGetProducts from "@/hooks/useGetProducts";
 
-const GET_PRODUCTS = gql`
-	query GetProducts {
-		products {
-			image
-			name
-			id
-			description
-			category
-			quantity
-			price
-		}
-	}
-`;
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ProductSlide = () => {
-	const [data, setData] = useState([]);
-
-	useQuery(GET_PRODUCTS, {
-		onCompleted: (data) => {
-			setData(data.products);
-		},
-	});
+	const data = useGetProducts();
+	const router = useRouter();
 
 	const settings: Settings = {
 		className: "center",
@@ -52,6 +35,13 @@ const ProductSlide = () => {
 			},
 		],
 	};
+
+	useEffect(() => {
+		const user = localStorage.getItem("user");
+		if (!user) {
+			router.push("/");
+		}
+	}, [router]);
 
 	return (
 		<div className="products">

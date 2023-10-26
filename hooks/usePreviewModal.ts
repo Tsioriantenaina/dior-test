@@ -1,6 +1,6 @@
-import { ProductType } from "@/types";
 import { create } from "zustand";
 
+import { ProductType } from "@/types";
 interface PreviewModal {
 	isOpen: boolean;
 	data?: ProductType[];

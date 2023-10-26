@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import { CustomArrowProps } from "react-slick";
 
 const NextArrow = (props: CustomArrowProps) => {

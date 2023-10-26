@@ -3,6 +3,7 @@
 		@include breakpoint("mobile") {
 			width: 360px;
 		}
+
 		@include breakpoint("small") {
 			width: 580px;
 		}

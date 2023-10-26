@@ -2,15 +2,18 @@
 	margin-top: 34px;
 	height: 250px;
 	align-items: flex-end;
+
 	@include breakpoint("small") {
 		margin-top: 50px;
 		height: 445px;
 	}
+
 	@include breakpoint("medium") {
 		margin-top: 75px;
 	}
+
 	@include breakpoint("large") {
-		margin-top: 253px;
+		margin-top: 100px;
 	}
 }
 
@@ -56,6 +59,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-end;
+
 			@include breakpoint("small") {
 				margin-right: 0;
 				margin-bottom: 32px;
@@ -68,6 +72,7 @@
 		font-weight: 300;
 		margin-top: 10px;
 		font-size: 12px;
+
 		@include breakpoint("small") {
 			margin-top: 20px;
 			font-size: 16px;
@@ -79,6 +84,7 @@
 		text-transform: uppercase;
 		font-size: 12px;
 		font-family: $inter;
+
 		@include breakpoint("small") {
 			margin: 0 0 19px;
 			font-size: 32px;
@@ -88,6 +94,7 @@
 	&_price {
 		font-family: $inter;
 		font-size: 16px;
+
 		@include breakpoint("small") {
 			font-size: 20px;
 		}
@@ -140,6 +147,7 @@
 .slick-slide > div {
 	height: 797px;
 }
+
 .slick-track {
 	height: 797px;
 	display: flex !important;
@@ -178,6 +186,7 @@
 	display: flex;
 	justify-content: center;
 	margin: 0 50px;
+
 	.product {
 		opacity: 0.2;
 		margin-bottom: 43px;
@@ -220,6 +229,7 @@
 		opacity: 1;
 		margin: 20px 16px 60px;
 		height: 185px;
+
 		@include breakpoint("small") {
 			height: 275px;
 			min-width: 680px;
@@ -239,6 +249,7 @@
 		.product_right {
 			margin-left: -67px;
 			width: 137px;
+
 			@include breakpoint("small") {
 				margin-left: -240px;
 				width: 335px;
@@ -247,6 +258,7 @@
 
 		&:first-child {
 			margin-left: 10px;
+
 			@include breakpoint("medium") {
 				margin-left: 0;
 			}

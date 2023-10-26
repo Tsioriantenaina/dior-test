@@ -1,5 +1,6 @@
+"use client";
+
 import usePreviewModal from "@/hooks/usePreviewModal";
-import React from "react";
 import Modal from "./Modal";
 import CartList from "../cart/CartList";
 

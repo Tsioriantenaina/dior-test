@@ -1,12 +1,11 @@
-import Image from "next/image";
-import React, { MouseEventHandler, useState } from "react";
+"use client";
+import React, { MouseEventHandler } from "react";
 import ProductImage from "./ProductImage";
 import Button from "../Button";
-
-import cartIcon from "../../public/cart.png";
 import { ProductType } from "@/types";
 import useCart from "@/hooks/useCart";
 
+import cartIcon from "../../public/cart.png";
 interface ProductProps {
 	product: ProductType;
 }
@@ -18,6 +17,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
 		e.preventDefault();
 		cart.addItem(product);
 	};
+
 	return (
 		<div className="flex flex-col items-center justify-center">
 			<div className="product">

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import Item from "./Item";
 import logo from "../../public/logo.png";
 import cart from "../../public/cart.png";

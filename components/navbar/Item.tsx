@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import { IconType } from "react-icons";
 
 interface ItemProps {
 	label?: string;

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import Item from "./Item";
 
 import filterIcon from "../../public/option.png";

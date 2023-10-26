@@ -5,12 +5,19 @@
 	z-index: 10 !important;
 	position: relative;
 
+	@include breakpoint("mobile") {
+		margin-bottom: 60px;
+	}
+
 	@include breakpoint("small") {
+		margin-bottom: 100px;
 		margin-left: 70px;
 	}
+
 	@include breakpoint("medium") {
 		margin-left: 0;
 	}
+
 	&_french {
 		color: $text-gray;
 	}

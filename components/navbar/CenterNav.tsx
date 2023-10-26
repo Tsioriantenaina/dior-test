@@ -1,4 +1,3 @@
-import React from "react";
 import Item from "./Item";
 import key from "../../public/key.png";
 

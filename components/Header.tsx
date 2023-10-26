@@ -9,7 +9,7 @@ const Header = () => {
 			<Image
 				alt="logo"
 				src={logo}
-				className="mt-[82px] mb-[160px]"
+				className="mt-[82px] mb-[100px]"
 			/>
 		</div>
 	);

@@ -1,5 +1,6 @@
-import React from "react";
-import Slider, { CustomArrowProps } from "react-slick";
+"use client";
+
+import { CustomArrowProps } from "react-slick";
 
 const PrevArrow = (props: CustomArrowProps) => {
 	const { className, style, onClick } = props;

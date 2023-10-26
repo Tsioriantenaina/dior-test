@@ -27,6 +27,7 @@
 		@include breakpoint("mobile") {
 			display: none;
 		}
+
 		@include breakpoint("small") {
 			display: block;
 			height: calc(100vh - 45px);
@@ -38,6 +39,7 @@
 				display: block;
 				object-fit: cover;
 			}
+
 			@include breakpoint("small") {
 				display: none;
 			}
