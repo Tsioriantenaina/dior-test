@@ -4,15 +4,16 @@ import Image from "next/image";
 
 interface ButtonProps {
 	label: string;
-	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 	disabled?: boolean;
 	big?: boolean;
 	icon?: any;
 	iconColor?: string;
 	className?: string;
+	dataTestid?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, disabled, big, icon, iconColor, className }) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, disabled, big, icon, iconColor, className, dataTestid }) => {
 	return (
 		<button
 			onClick={onClick}
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, disabled, big, icon, ic
             button-primary 
             ${big ? "big" : ""}
             ${className ? className : ""}`}
+			data-testid={dataTestid}
 		>
 			<span>{label}</span>{" "}
 			{icon && (

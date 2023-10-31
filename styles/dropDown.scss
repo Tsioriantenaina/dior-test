@@ -1,0 +1,49 @@
+.dropDown {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 350px;
+	height: 170px;
+	position: absolute;
+	background-color: $dropdown-bg;
+	border: 1px solid $dropdown-border;
+	padding: 48px 48px 25px;
+	border-radius: 5px;
+	top: 42px;
+	left: 50%;
+	transform: translateX(-50%);
+	gap: 40px;
+	z-index: 19;
+
+	&::before {
+		content: url("/arrowTop.svg");
+		position: absolute;
+		width: 22px;
+		height: 11px;
+		top: 13px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 19;
+	}
+
+	&_list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+
+		.navItem {
+			justify-content: flex-start;
+			.navbar_title {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.navItem {
+	.navbar_title.activate {
+		font-weight: bolder;
+		border-bottom: 2px solid $primary-color;
+	}
+}

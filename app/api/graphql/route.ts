@@ -14,6 +14,7 @@ const typeDefs = gql`
 		price: String
 		image: String
 		quantity: Int
+		gender: String
 	}
 
 	type Query {

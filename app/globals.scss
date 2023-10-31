@@ -12,6 +12,8 @@ $text-gray: #868686;
 $white: #ffffff;
 $iconColor: #969696;
 $totalColor: #545454;
+$dropdown-border: #e6e6e6;
+$dropdown-bg: #fbfbfb;
 
 html,
 body,
@@ -32,3 +34,4 @@ body,
 
 @import "../styles//modal.scss";
 @import "../styles//cart.scss";
+@import "../styles//dropDown.scss";

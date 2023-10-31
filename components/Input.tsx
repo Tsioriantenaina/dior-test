@@ -11,15 +11,32 @@ interface InputProps {
 	register: UseFormRegister<FieldValues>;
 	errors: FieldErrors;
 	className?: string;
+	clearErrors?: (errorName: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ id, label, type, disabled, required, register, errors, className }) => {
+const Input: React.FC<InputProps> = ({
+	id,
+	label,
+	type,
+	disabled,
+	required,
+	register,
+	errors,
+	className,
+	clearErrors = () => {},
+}) => {
 	return (
 		<div className="w-full relative">
 			<input
 				id={id}
 				disabled={disabled}
-				{...register(id, { required })}
+				{...register(id, {
+					required,
+					onChange: (e) => {
+						clearErrors("apiError");
+					},
+				})}
+				data-testid={id}
 				placeholder=""
 				type={type}
 				className={`
@@ -38,6 +55,7 @@ const Input: React.FC<InputProps> = ({ id, label, type, disabled, required, regi
                 `}
 			/>
 			<label
+				data-testid={`${label}-label`}
 				className={`
                 absolute 
                 text-md 

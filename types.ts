@@ -6,4 +6,5 @@ export interface ProductType {
 	price: string;
 	image: string;
 	quantity: number;
+	gender: string;
 }

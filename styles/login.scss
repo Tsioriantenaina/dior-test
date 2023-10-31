@@ -9,6 +9,10 @@
 			z-index: 10 !important;
 			width: 240px !important;
 			margin-bottom: 75px;
+
+			@include breakpoint("small") {
+				width: 245px !important;
+			}
 		}
 	}
 

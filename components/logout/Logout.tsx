@@ -11,7 +11,7 @@ const Logout = () => {
 		router.push("/");
 	}, [router]);
 
-	return <div>Login out</div>;
+	return null;
 };
 
 export default Logout;

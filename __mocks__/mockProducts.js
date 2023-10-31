@@ -1,11 +1,8 @@
-import { ProductType } from "./types";
-
-export const data: ProductType[] = [
+export const mockProduct = [
 	{
 		id: 1,
 		name: "Men Shirt",
-		category: "Shirt",
-		gender: "Men",
+		category: "Men Shirt",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "19 000",
@@ -15,8 +12,7 @@ export const data: ProductType[] = [
 	{
 		id: 2,
 		name: "Bag",
-		category: "Bags",
-		gender: "Women",
+		category: "Lady Bag",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "3 000",
@@ -25,9 +21,8 @@ export const data: ProductType[] = [
 	},
 	{
 		id: 3,
-		name: "My Jewelery",
-		category: "Jewelery",
-		gender: "Women",
+		name: "Jewelery",
+		category: "Dior Jewelery",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "100 000",
@@ -36,9 +31,8 @@ export const data: ProductType[] = [
 	},
 	{
 		id: 4,
-		name: "Best Shirt",
-		category: "Shirt",
-		gender: "Men",
+		name: "Men Shirt",
+		category: "Men Picture",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "23 000",
@@ -47,9 +41,8 @@ export const data: ProductType[] = [
 	},
 	{
 		id: 5,
-		name: "Cool Bag",
-		category: "Bags",
-		gender: "women",
+		name: "Bag",
+		category: "TEST Bag",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "2 000",
@@ -58,9 +51,8 @@ export const data: ProductType[] = [
 	},
 	{
 		id: 6,
-		name: "Secondary Jewelery",
-		category: "Jewelery",
-		gender: "Women",
+		name: "Jewelery",
+		category: "Dior TEST",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		price: "50 000",

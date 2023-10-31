@@ -17,7 +17,8 @@ const LoginBody = () => {
 		register,
 		handleSubmit,
 		setError,
-		reset,
+		resetField,
+		clearErrors,
 		formState: { errors },
 	} = useForm<FieldValues>({ criteriaMode: "all" });
 
@@ -29,10 +30,11 @@ const LoginBody = () => {
 			localStorage.setItem("user", "logined");
 			router.push("/home");
 		} catch (error) {
-			setError("apiError", { message: error });
+			setError("apiError", { message: `${error.message}` });
+			resetField("login");
+			resetField("password");
 		} finally {
 			setIsLoading(false);
-			reset();
 		}
 	};
 
@@ -48,33 +50,44 @@ const LoginBody = () => {
 			className="flex flex-col items-center justify-center gap-4 loginBody"
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<div className="inputGroup">
+			<div
+				data-testid="inputGroup"
+				className="inputGroup"
+			>
 				{(errors.login || errors.password || errors.apiError) && (
-					<p className="text-rose-500 text-[14px] mb-[26px]">Your login or password are incorrect</p>
+					<p
+						data-testid="error-message"
+						className="text-rose-500 text-[14px] mb-[26px]"
+					>
+						Your login or password are incorrect
+					</p>
 				)}
 				<Input
 					id="login"
-					label="Loging"
+					label="login"
 					register={register}
 					disabled={isLoading}
 					errors={errors}
 					required
 					type="login"
+					clearErrors={clearErrors}
 				/>
 				<Input
 					id="password"
-					label="Password"
+					label="password"
 					register={register}
 					disabled={isLoading}
 					errors={errors}
 					required
 					type="password"
+					clearErrors={clearErrors}
 				/>
 			</div>
 
 			<Button
+				dataTestid="loginBtn"
 				label="Login"
-				onClick={() => {}}
+				// onClick={onSubmit}
 			/>
 		</form>
 	);
